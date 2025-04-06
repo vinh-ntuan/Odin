@@ -1,0 +1,42 @@
+#container {
+    display: flex;
+    flex-direction: column;  /* Stack elements vertically */
+    align-items: center;     /* Center elements horizontally */
+    justify-content: center; /* Center the content vertically within the container */
+    max-width: 320px;        /* Optional: Set a max width for the container */
+    margin: 0 auto;          /* Center the container horizontally */
+    padding: 10px;           /* Optional: Padding inside the container */
+}
+
+#display {
+    font-size: 2rem;         /* Larger text for the display */
+    padding: 10px;
+    width: 100%;             /* Make the display take up full width */
+    text-align: right;       /* Align text to the right */
+    background-color: darksalmon;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;     /* Space between the display and the buttons */
+}
+
+#buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    gap: 10px; /* Space between buttons */
+    width: 100%; /* Ensure the buttons grid takes up the full width */
+}
+
+button {
+    padding: 20px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: blue;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: darkblue;
+}
