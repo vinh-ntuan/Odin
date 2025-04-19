@@ -73,22 +73,23 @@ let player2 = Player('Player 2', 'O');
 let currentPlayer = player1;
 
 // User submitted names
-nameDialog.addEventListener('submit', (event) => {
-    const player1Name = document.getElementById('player1');
-    const player2Name = document.getElementById('player2');
+startButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    const player1Name = document.getElementById('player1').value;
+    const player2Name = document.getElementById('player2').value;
 
-    if (!player1.value.trim() || !player2.value.trim()){ 
-      event.preventDefault(); // stop the dialog from closing
+    if (!player1Name.trim() || !player2Name.trim()){ 
+       // stop the dialog from closing
       alert('Please fill out the both player names');
     } else {
-        player1 = Player(player1Name.value, 'X');
-        player2 = Player(player2Name.value, 'O');
+        player1 = Player(player1Name, 'X');
+        player2 = Player(player2Name, 'O');
         currentPlayer = player1;
         nameDialog.close();
     }
 });
-nameDialog.showModal(); // is not blocking the background 
 
+nameDialog.showModal(); // display name dialog
 
 resetButton.addEventListener('click', () => {
     tileButtons.forEach((button) => {
