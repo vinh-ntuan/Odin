@@ -8,11 +8,13 @@ const showDialogButton = document.querySelector("dialog + button");
 const cancelButton = addBookDialog.querySelector("#cancel");
 const confirmButton = addBookDialog.querySelector("#confirm");
 
-function Book(name, author) {
-    this.name = name; 
-    this.author = author;
-    this.id = crypto.randomUUID();
-    this.isRead = false;
+class Book{
+    constructor(name, author){
+        this.name = name;
+        this.author = author;
+        this.isRead = false;
+        this.id = crypto.randomUUID();
+    }
 }
 
 showDialogButton.addEventListener("click", () => {
